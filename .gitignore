@@ -55,6 +55,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+<<<<<<< HEAD
+=======
+[Ll]ogs/
+>>>>>>> 7e7376bb22ca5a1371bb6d52a413174e5f33bf21
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -94,6 +98,10 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
+<<<<<<< HEAD
+=======
+*.meta
+>>>>>>> 7e7376bb22ca5a1371bb6d52a413174e5f33bf21
 *.obj
 *.iobj
 *.pch
@@ -151,9 +159,12 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+<<<<<<< HEAD
 # JustCode is a .NET coding add-in
 .JustCode
 
+=======
+>>>>>>> 7e7376bb22ca5a1371bb6d52a413174e5f33bf21
 # TeamCity is a build add-in
 _TeamCity*
 
@@ -373,4 +384,9 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
+<<<<<<< HEAD
 # End of https://www.gitignore.io/api/dotnetcore,visualstudio,visualstudiocode
+=======
+# Ionide (cross platform F# VS Code tools) working folder
+.ionide/
+>>>>>>> 7e7376bb22ca5a1371bb6d52a413174e5f33bf21
