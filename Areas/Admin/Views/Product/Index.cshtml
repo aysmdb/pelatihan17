@@ -1,0 +1,55 @@
+@model PaginationHelper<Product>
+
+<div class="row">
+    <div class="col">
+        <a href="@Url.Action("create", "product", new { Area = "admin" })" class="btn btn-success" style="margin-bottom: 10px">Add Product</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>
+                            <a href="@Url.Action("edit", "product", new { Area = "admin", Id = item.Id })" class="btn btn-primary btn-sm">Edit</a>
+                            <button type="button" onclick="deleteProd(@item.Id)" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @{
+            var prevDisabled = !Model.HasPrevPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <a asp-action="Index"
+        asp-route-pageNumber="@(Model.PageIndex - 1)"
+        class="btn btn-default @prevDisabled">
+            Previous
+        </a>
+        <a asp-action="Index"
+        asp-route-pageNumber="@(Model.PageIndex + 1)"
+        class="btn btn-default @nextDisabled">
+            Next
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function deleteProd(id){
+            if(window.confirm("Delete this item?")){
+                window.location.href = "/admin/product/delete/" + id
+            }
+        }
+    </script>
+}
